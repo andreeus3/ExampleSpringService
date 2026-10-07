@@ -4,6 +4,7 @@ import com.example.firstapplication.dao.UserDao;
 import com.example.firstapplication.dto.CreateUserDTO;
 import com.example.firstapplication.dto.UserDTO;
 import com.example.firstapplication.entitys.User;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public UserDTO saveUser(CreateUserDTO createUserDTO){
         User user = new User();
 
@@ -77,8 +79,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void deleteByID(Long ID){
-
+        userDao.deleteByID(ID);
     }
 
 }

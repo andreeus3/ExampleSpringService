@@ -30,13 +30,11 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    @Transactional
     public User saveUser(User user){
         return entityManager.merge(user);
     }
 
     @Override
-    @Transactional
     public void deleteByID(Long ID){
         User user = entityManager.find(User.class, ID);
         if(user!=null){
