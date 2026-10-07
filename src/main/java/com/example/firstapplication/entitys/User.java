@@ -4,7 +4,7 @@ package com.example.firstapplication.entitys;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="USERS")
 
 public class User {
 
