@@ -3,6 +3,8 @@ package com.example.firstapplication.entitys;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name="USERS")
 
@@ -13,18 +15,18 @@ public class User {
     private long ID;
 
     private String name;
-    private String age;
-    private String DOB;
+    private int age;
+    private LocalDate dob;
     private String password;
 
     public User(){
 
     }
 
-    public User(String name, String age, String DOB, String password){
+    public User(String name, int age, LocalDate dob, String password){
         this.name = name;
         this.age = age;
-        this.DOB = DOB;
+        this.dob = dob;
         this.password = password;
     }
 
@@ -44,20 +46,20 @@ public class User {
         this.ID = ID;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getDOB() {
-        return DOB;
+    public LocalDate getDob() {
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDob(LocalDate DOB) {
+        this.dob = DOB;
     }
 
     public String getPassword() {

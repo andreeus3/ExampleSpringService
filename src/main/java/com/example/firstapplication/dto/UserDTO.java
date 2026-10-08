@@ -1,12 +1,14 @@
 package com.example.firstapplication.dto;
 
 
+import java.time.LocalDate;
+
 public class UserDTO {
     private long ID;
 
     private String name;
-    private String age;
-    private String DOB;
+    private int age;
+    private LocalDate dob;
 
     public long getID() {
         return ID;
@@ -24,19 +26,19 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getDOB() {
-        return DOB;
+    public LocalDate getDOB() {
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDob(LocalDate DOB) {
+        this.dob = DOB;
     }
 }

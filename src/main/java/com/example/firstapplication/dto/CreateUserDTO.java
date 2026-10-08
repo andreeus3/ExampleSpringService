@@ -1,9 +1,11 @@
 package com.example.firstapplication.dto;
 
+import java.time.LocalDate;
+
 public class CreateUserDTO {
     private String name;
-    private String age;
-    private String DOB;
+    private int age;
+    private LocalDate dob;
     private String password;
 
     public String getName() {
@@ -14,20 +16,20 @@ public class CreateUserDTO {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getDOB() {
-        return DOB;
+    public LocalDate getDob() {
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDob(LocalDate DOB) {
+        this.dob = DOB;
     }
 
     public String getPassword() {

@@ -28,9 +28,10 @@ public class UserServiceImpl implements UserService {
 
        for(User user: users){
            UserDTO dto = new UserDTO();
+           dto.setID(user.getID());
            dto.setName(user.getName());
            dto.setAge(user.getAge());
-           dto.setDOB(user.getDOB());
+           dto.setDob(user.getDob());
 
            userDTOS.add(dto);
        }
@@ -49,8 +50,9 @@ public class UserServiceImpl implements UserService {
         UserDTO userDTO = new UserDTO();
         User user = userOptional.get();
 
+        userDTO.setID(user.getID());
         userDTO.setName(user.getName());
-        userDTO.setDOB(user.getDOB());
+        userDTO.setDob(user.getDob());
         userDTO.setAge(user.getAge());
 
         return Optional.of(userDTO);
@@ -59,11 +61,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public UserDTO saveUser(CreateUserDTO createUserDTO){
+    public UserDTO saveUser(CreateUserDTO createUserDTO) {
         User user = new User();
-
         user.setAge(createUserDTO.getAge());
-        user.setDOB(createUserDTO.getDOB());
+        user.setDob(createUserDTO.getDob());
         user.setPassword(createUserDTO.getPassword());
         user.setName(createUserDTO.getName());
 
@@ -72,7 +73,7 @@ public class UserServiceImpl implements UserService {
         UserDTO response = new UserDTO();
 
         response.setAge(savedUser.getAge());
-        response.setDOB(savedUser.getDOB());
+        response.setDob(savedUser.getDob());
         response.setName(savedUser.getName());
 
         return response;
